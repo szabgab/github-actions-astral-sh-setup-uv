@@ -22,9 +22,11 @@ jobs:
 
   try:
     runs-on: ubuntu-latest
-    matrix:
-      version:
-        - 0.8.10
+    strategy:
+      fail-fast: false
+      matrix:
+        version:
+          - 0.8.10
 
     steps:
       - uses: actions/checkout@v6
