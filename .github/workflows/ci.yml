@@ -29,9 +29,9 @@ jobs:
         uv-version:
           - 0.8.10
           - 0.7.3
-        python-version:
-          - 3.13.7
-          - 3.12.1
+        #python-version:
+        #  - 3.13.7
+        #  - 3.12.1
 
     steps:
       - uses: actions/checkout@v6
@@ -40,7 +40,7 @@ jobs:
         uses: astral-sh/setup-uv@v7
         with:
           version: ${{matrix.uv-version}}
-          python-version: ${{matrix.python-version}}
+          #python-version: ${{matrix.python-version}}
         #   enable-cache: true
         #   cache-dependency-glob: "**/requirements.txt"
 
