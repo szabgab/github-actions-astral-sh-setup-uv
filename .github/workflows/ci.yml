@@ -41,8 +41,8 @@ jobs:
         with:
           #version: ${{matrix.uv-version}}
           python-version: ${{matrix.python-version}}
-          enable-cache: true
-          cache-dependency-glob: "**/uv.lock"
+          enable-cache: false
+          #cache-dependency-glob: "**/uv.lock"
 
       - name: uv and python version
         run: |
