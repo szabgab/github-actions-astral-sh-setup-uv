@@ -27,6 +27,7 @@ jobs:
       matrix:
         version:
           - 0.8.10
+          - 0.7.3
 
     steps:
       - uses: actions/checkout@v6
@@ -38,7 +39,7 @@ jobs:
         #   enable-cache: true
         #   cache-dependency-glob: "**/requirements.txt"
 
-      - name:
+      - name: uv version
         run: |
           uv -V
 
