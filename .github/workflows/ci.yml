@@ -34,7 +34,7 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
         with:
-          version: ${matrix.version}
+          version: ${{matrix.version}}
         #   enable-cache: true
         #   cache-dependency-glob: "**/requirements.txt"
 
