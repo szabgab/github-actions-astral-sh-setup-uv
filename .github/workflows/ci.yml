@@ -16,18 +16,22 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
 
-      - name:
+      - name: uv and python version
         run: |
           uv -V
+          python -V
 
   try:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        version:
+        uv-version:
           - 0.8.10
           - 0.7.3
+        python-version:
+          - 3.13.7
+          - 3.12.1
 
     steps:
       - uses: actions/checkout@v6
@@ -35,11 +39,13 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
         with:
-          version: ${{matrix.version}}
+          version: ${{matrix.uv-version}}
+          python-version: ${{matrix.python-version}}
         #   enable-cache: true
         #   cache-dependency-glob: "**/requirements.txt"
 
-      - name: uv version
+      - name: uv and python version
         run: |
           uv -V
+          python -V
 
