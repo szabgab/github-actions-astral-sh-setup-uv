@@ -26,9 +26,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        #uv-version:
-        #  - 0.8.10
-        #  - 0.7.3
+        uv-version:
+          - 0.8.10
+          - 0.7.3
         python-version:
           - 3.13
           - 3.12
@@ -39,10 +39,9 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
         with:
-          #version: ${{matrix.uv-version}}
+          version: ${{matrix.uv-version}}
           python-version: ${{matrix.python-version}}
           enable-cache: false
-          #cache-dependency-glob: "**/uv.lock"
 
       - name: uv and python version
         run: |
